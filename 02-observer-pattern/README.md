@@ -5,7 +5,7 @@
 ## Solution
 
 ## Example
-
+![Observer Pattern UML diagram](Resources/diagram.png)
 ## Resources
 
 * [Observer Pattern – Design Patterns (ep 2)](https://www.youtube.com/watch?v=_BpmfnqjgzQ)
