@@ -1,4 +1,5 @@
 ﻿using strategypattern.Honks;
+using System;
 
 namespace strategypattern
 {
@@ -9,13 +10,19 @@ namespace strategypattern
             Car car;
 
             car = new Car(new LoudHonk(), new Colors.BlueColor());
-            car.Run();
+            car.Honk();
+            car.Color();
+            Console.WriteLine();
 
             car = new Car(new WhisperingHonk(), new Colors.GreenColor());
-            car.Run();
+            car.Honk();
+            car.Color();
+            Console.WriteLine();
 
             car = new Car(new RegularHonk(), new Colors.WhiteColor());
-            car.Run();
+            car.Honk();
+            car.Color();
+            Console.WriteLine();
         }
     }
 }

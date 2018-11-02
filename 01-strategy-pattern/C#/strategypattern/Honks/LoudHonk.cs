@@ -1,12 +1,13 @@
 ﻿using strategypattern.Interfaces;
+using System;
 
 namespace strategypattern.Honks
 {
     class LoudHonk : IHonkingStrategy
     {
-        public string DoHonk()
+        public void Execute()
         {
-            return "This is a loud honk!";
+            Console.WriteLine("This is a loud honk!");
         }
     }
 }

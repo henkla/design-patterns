@@ -2,6 +2,6 @@
 {
     public interface IHonkingStrategy
     {
-        string DoHonk();
+        void Execute();
     }
 }

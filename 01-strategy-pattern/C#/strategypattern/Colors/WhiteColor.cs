@@ -1,15 +1,13 @@
-﻿using strategypattern.Enums;
-using strategypattern.Interfaces;
+﻿using strategypattern.Interfaces;
+using System;
 
 namespace strategypattern.Colors
 {
     public class WhiteColor : IColorStrategy
     {
-        private Color myColor = Color.White;
-
-        public string SayColor()
+        public void Execute()
         {
-            return $"My color is {myColor}.";
+            Console.WriteLine("My color is White.");
         }
     }
 }

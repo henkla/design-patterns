@@ -5,30 +5,23 @@ namespace strategypattern
 {
     public class Car
     {
-        private IHonkingStrategy _honkingStrategy;
-        private IColorStrategy _colorStrategy;
+        private IHonkingStrategy _honk;
+        private IColorStrategy _color;
 
         public Car(IHonkingStrategy honkingStrategy, IColorStrategy colorStrategy)
         {
-            _honkingStrategy = honkingStrategy;
-            _colorStrategy = colorStrategy;
+            _honk = honkingStrategy;
+            _color = colorStrategy;
+        }
+        
+        public void Honk()
+        {
+            _honk.Execute();
         }
 
-        public void Run()
+        public void Color()
         {
-            Console.WriteLine(DoTheHonk());
-            Console.WriteLine(SayTheColor());
-            Console.WriteLine();
-        }
-
-        private string DoTheHonk()
-        {
-            return _honkingStrategy.DoHonk();
-        }
-
-        private string SayTheColor()
-        {
-            return _colorStrategy.SayColor();
+            _color.Execute();
         }
     }
 }

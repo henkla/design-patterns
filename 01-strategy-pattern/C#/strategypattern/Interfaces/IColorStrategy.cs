@@ -4,6 +4,6 @@ namespace strategypattern.Interfaces
 {
     public interface IColorStrategy
     {
-        string SayColor();
+        void Execute();
     }
 }
