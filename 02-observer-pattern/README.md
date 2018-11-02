@@ -1,4 +1,4 @@
-# Strategy Pattern
+# Observer Pattern
 
 ## Problem
 
