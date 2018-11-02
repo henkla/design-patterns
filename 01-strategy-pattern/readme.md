@@ -7,6 +7,7 @@
 ## Example
 
 #### Diagram
+![Strategy Pattern UML diagram](Resources/diagram.jpg)
 
 ## Resources
 
