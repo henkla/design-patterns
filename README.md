@@ -1,5 +1,14 @@
 # Design Patterns
 
+### 01: Strategy Pattern
+Text
+
+### 02: Observer Pattern
+Text
+
+### 03: Decorator Pattern
+Text
+
 ### Resources
 
 * [Head First Design Patterns @ AdLibris](https://www.adlibris.com/se/bok/head-first-design-patterns-9780596007126)
