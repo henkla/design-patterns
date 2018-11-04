@@ -9,6 +9,9 @@ Text
 #### [03 - Decorator Pattern](03-decorator-pattern)
 Text
 
+#### [04 - Factory Method Pattern](04-factory-method-pattern)
+Text
+
 ##### Resources
 
 * [Head First Design Patterns @ AdLibris](https://www.adlibris.com/se/bok/head-first-design-patterns-9780596007126)
