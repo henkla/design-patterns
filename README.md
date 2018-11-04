@@ -1,12 +1,12 @@
 # Design Patterns
 
-### 01: Strategy Pattern
+#### 01: Strategy Pattern [link](01-strategy-pattern)
 Text
 
-### 02: Observer Pattern
+#### 02: Observer Pattern
 Text
 
-### 03: Decorator Pattern
+#### 03: Decorator Pattern
 Text
 
 ### Resources
