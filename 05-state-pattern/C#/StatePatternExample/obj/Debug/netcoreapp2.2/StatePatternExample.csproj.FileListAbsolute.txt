@@ -1,0 +1,11 @@
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/bin/Debug/netcoreapp2.2/StatePatternExample.deps.json
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/bin/Debug/netcoreapp2.2/StatePatternExample.runtimeconfig.json
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/bin/Debug/netcoreapp2.2/StatePatternExample.runtimeconfig.dev.json
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/bin/Debug/netcoreapp2.2/StatePatternExample.dll
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/bin/Debug/netcoreapp2.2/StatePatternExample.pdb
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/obj/Debug/netcoreapp2.2/StatePatternExample.csprojAssemblyReference.cache
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/obj/Debug/netcoreapp2.2/StatePatternExample.csproj.CoreCompileInputs.cache
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/obj/Debug/netcoreapp2.2/StatePatternExample.AssemblyInfoInputs.cache
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/obj/Debug/netcoreapp2.2/StatePatternExample.AssemblyInfo.cs
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/obj/Debug/netcoreapp2.2/StatePatternExample.dll
+/home/hela/Utveckling/Repositories/design-patterns/05-state-pattern/C#/StatePatternExample/obj/Debug/netcoreapp2.2/StatePatternExample.pdb
