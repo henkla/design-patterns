@@ -12,11 +12,19 @@ namespace StatePatternExample.Factories
         private IGumballMachineState _soldOutState;
         private IGumballMachineState _errorState;
         private IGumballMachineState _nextState;
+        private IGumballMachineState _startingState;
         private GumballMachine _gumballMachine;
 
         public StateFactory(GumballMachine gumballMachine)
         {
             _gumballMachine = gumballMachine;
+            _startingState = new ErrorState(_gumballMachine, this, new Exception("Starting state undefined."));
+        }
+
+        public StateFactory(GumballMachine gumballMachine, IGumballMachineState startingState)
+        {
+            _gumballMachine = gumballMachine;
+            _startingState = startingState;
         }
 
         public IGumballMachineState GetNoCoinState() 
@@ -27,10 +35,9 @@ namespace StatePatternExample.Factories
             return _noCoinState;
         }
 
-        internal IGumballMachineState SetNextState(IGumballMachineState nextState)
+        internal void SetNextState(IGumballMachineState nextState)
         {
             _nextState = nextState;
-            return _nextState;
         }
 
         internal IGumballMachineState GetNextState()
@@ -70,7 +77,15 @@ namespace StatePatternExample.Factories
 
         public IGumballMachineState GetStartingState()
         {
-            return GetNoCoinState();
+            if (_startingState == null)
+                _startingState = new ErrorState(_gumballMachine, this, new Exception("Starting state undefined."));
+            
+            return _startingState;
+        }
+
+        public void SetStartingState(IGumballMachineState startingState)
+        {
+            _startingState = startingState;
         }
     }
 }

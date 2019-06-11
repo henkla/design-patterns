@@ -15,7 +15,8 @@ namespace StatePatternExample
         {
             _name = this.GetType().Name;
             _stateFactory = new StateFactory(this);
-            _currentState = _stateFactory.GetNextState();
+            _stateFactory.SetStartingState(_stateFactory.GetNoCoinState());
+            LoadNextState();
             AddGumballs(numberOfGumballs);
         }
 
@@ -25,11 +26,11 @@ namespace StatePatternExample
 
             try
             {
-                _currentState = _stateFactory.GetStartingState();
+                _stateFactory.SetNextState(_stateFactory.GetStartingState());
             }
             catch (Exception e)
             {
-                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+                _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             }
         }
 
@@ -50,7 +51,7 @@ namespace StatePatternExample
             }
             catch (Exception e)
             {
-                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+                _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             }
         }
         public void InsertCoin() 
@@ -59,12 +60,12 @@ namespace StatePatternExample
 
             try
             {
+                LoadNextState();
                 _currentState.InsertCoin();
-                _currentState = _stateFactory.GetNextState();
             }   
             catch(Exception e) 
             {
-                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+                _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             } 
         }
 
@@ -74,13 +75,13 @@ namespace StatePatternExample
 
             try
             {
+                LoadNextState();
                 _currentState.EjectCoin();
-                _currentState = _stateFactory.GetNextState();
             }
             catch(Exception e) 
             {
-                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
-            } 
+                _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+            }
         }
 
         public void TurnCrank() 
@@ -89,17 +90,17 @@ namespace StatePatternExample
 
             try
             {
+                LoadNextState();
                 _currentState.TurnCrank();
-                _currentState = _stateFactory.GetNextState();
 
+                LoadNextState();
                 _currentState.Dispense();
-                _currentState = _stateFactory.GetNextState();
 
                 ConsumeGumball(1);
             }
             catch(Exception e) 
             {
-                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+                _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             } 
         }
 
@@ -117,15 +118,20 @@ namespace StatePatternExample
                 if (addedAmount > 0) 
                 {
                     NumberOfGumballs = NumberOfGumballs + addedAmount;
-                    _currentState = _stateFactory.GetStartingState();
+                    _stateFactory.SetNextState(_stateFactory.GetStartingState());
                 }
 
                 Console.WriteLine($"[{_name}] Added {addedAmount} gumballs.");
             }
             catch (Exception e)
             {
-                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+                _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             }
+        }
+
+        private void LoadNextState() 
+        {
+            _currentState = _stateFactory.GetNextState();
         }
     }
 }
