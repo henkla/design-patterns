@@ -12,6 +12,9 @@ Text
 #### [04 - Factory Method Pattern](04-factory-method-pattern)
 Text
 
+#### [05 - State Pattern](05-state-pattern)
+Text
+
 ##### Resources
 
 * [Head First Design Patterns @ AdLibris](https://www.adlibris.com/se/bok/head-first-design-patterns-9780596007126)
