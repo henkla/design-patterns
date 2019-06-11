@@ -9,19 +9,19 @@ namespace StatePatternExample
         {
             _gumballMachine = new GumballMachine(3);
 
-            CountGumballsAndÍnsertCoinAndEjectCoin();
+            CountGumballsAndInsertCoinAndEjectCoin();
             
             while (_gumballMachine.NumberOfGumballs > 0) 
             {
-                CountGumballsAndÍnsertCoinAndTurnCrank();
+                CountGumballsAndInsertCoinAndTurnCrank();
             }
             
-            CountGumballsAndÍnsertCoinAndTurnCrank();
-            CountGumballsAndÍnsertCoinAndTurnCrank();
-            CountGumballsAndÍnsertCoinAndTurnCrank();
+            CountGumballsAndInsertCoinAndTurnCrank();
+            CountGumballsAndInsertCoinAndTurnCrank();
+            CountGumballsAndInsertCoinAndTurnCrank();
         }
 
-        private static void CountGumballsAndÍnsertCoinAndTurnCrank() {
+        private static void CountGumballsAndInsertCoinAndTurnCrank() {
 
             Console.WriteLine();
             _gumballMachine.CountGumballs();
@@ -29,7 +29,7 @@ namespace StatePatternExample
             _gumballMachine.TurnCrank();
         }
 
-        private static void CountGumballsAndÍnsertCoinAndEjectCoin() {
+        private static void CountGumballsAndInsertCoinAndEjectCoin() {
 
             Console.WriteLine();
             _gumballMachine.CountGumballs();
