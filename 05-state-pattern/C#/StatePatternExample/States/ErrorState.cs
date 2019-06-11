@@ -1,21 +1,24 @@
 using System;
+using StatePatternExample.Factories;
 
-public class ErrorState : IGumballMachineState
+namespace StatePatternExample.States
 {
-    private GumballMachine _gumballMachine;
-    private Exception _exception;
-
-    public ErrorState(GumballMachine gumballMachine, Exception exception = null)
+    public class ErrorState : BaseState
     {
-        _gumballMachine = gumballMachine;
-        _exception = exception;
+        private Exception _exception;
+        private string _name;
+
+        public ErrorState(GumballMachine gumballMachine, StateFactory stateFactory, Exception exception = null) 
+        : base(gumballMachine, stateFactory)
+        {
+            _exception = exception;
+            _name = this.GetType().Name;
+        }
+
+        public override void Dispense() => Console.WriteLine($"[{_name}] Machine is unable to dispense gumballs when in error state.");
+
+        public override void EjectCoin() => Console.WriteLine($"[{_name}] Machine is unable to hold coins when in error state.");
+
+        public override void InsertCoin() => Console.WriteLine($"[{_name}] Machine won't accept coins when in error state.");
     }
-
-    public void Dispense() => Console.WriteLine("Machine is unable to dispense gumballs when in error state.");
-
-    public void EjectCoin() => Console.WriteLine("Machine is unable to hold coins when in error state.");
-
-    public void InsertCoin() => Console.WriteLine("Machine won't accept coins when in error state.");
-
-    public void TurnCrank() => Console.WriteLine("Turning the crank yields no result.");
 }

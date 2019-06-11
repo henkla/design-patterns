@@ -1,7 +1,10 @@
-public interface IGumballMachineState 
+namespace StatePatternExample.Interfaces
 {
-    void InsertCoin();
-    void EjectCoin();
-    void TurnCrank();
-    void Dispense();
+    public interface IGumballMachineState 
+    {
+        void InsertCoin();
+        void EjectCoin();
+        void TurnCrank();
+        void Dispense();
+    }
 }

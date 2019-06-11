@@ -1,24 +1,21 @@
 using System;
+using StatePatternExample.Factories;
 
-public class NoCoinState : IGumballMachineState
+namespace StatePatternExample.States
 {
-    private GumballMachine _gumballMachine;
-
-    public NoCoinState(GumballMachine gumballMachine)
+    public class NoCoinState : BaseState
     {
-        _gumballMachine = gumballMachine;
+        private string _name;
+
+        public NoCoinState(GumballMachine gumballMachine, StateFactory stateFactory) : base(gumballMachine, stateFactory) 
+        {
+            _name = this.GetType().Name;
+        }
+
+        public override void InsertCoin()
+        {
+            Console.WriteLine($"[{_name}] Coin inserted.");
+            _stateFactory.SetNextState(_stateFactory.GetHasCoinState());
+        }
     }
-
-    public void Dispense() => Console.WriteLine("Can't dispense unless crank is turned.");
-
-
-    public void EjectCoin() => Console.WriteLine("Can't eject coin if not inserted.");
-
-    public void InsertCoin()
-    {
-        Console.WriteLine("Coin inserted.");
-        _gumballMachine.SetState(new HasCoinState(_gumballMachine));
-    }
-
-    public void TurnCrank() => Console.WriteLine("Turning crank without coin yields no result.");
 }

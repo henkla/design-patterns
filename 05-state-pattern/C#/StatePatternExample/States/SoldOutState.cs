@@ -1,19 +1,23 @@
 using System;
+using StatePatternExample.Factories;
 
-internal class SoldOutState : IGumballMachineState
+namespace StatePatternExample.States
 {
-    private GumballMachine _gumballMachine;
-
-    public SoldOutState(GumballMachine gumballMachine)
+    public class SoldOutState : BaseState
     {
-        _gumballMachine = gumballMachine;
+        private string _name;
+
+        public SoldOutState(GumballMachine gumballMachine, StateFactory stateFactory) : base(gumballMachine, stateFactory)
+        {
+            _name = this.GetType().Name;
+        }
+
+        public override void InsertCoin() 
+        {
+            Console.WriteLine($"[{_name}] Coin inserted.");
+            EjectCoin();
+        }
+
+        public override void EjectCoin() => Console.WriteLine($"[{_name}] Coin ejected.");
     }
-
-    public void Dispense() => Console.WriteLine("There are no gumballs to dispense.");
-
-    public void EjectCoin() => Console.WriteLine("The machine can't hold coins when out of gumballs.");
-
-    public void InsertCoin() => Console.WriteLine("The machine won't accept coins when out of gumballs.");
-
-    public void TurnCrank() => Console.WriteLine("Turning the crank yields no result.");
 }

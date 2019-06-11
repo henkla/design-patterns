@@ -4,26 +4,37 @@ namespace StatePatternExample
 {
     class Program
     {
+        private static GumballMachine _gumballMachine;
         static void Main(string[] args)
         {
-            var gumballMachine = new GumballMachine(2);
+            _gumballMachine = new GumballMachine(3);
 
-            gumballMachine.InsertCoin();
-            gumballMachine.EjectCoin();
+            CountGumballsAndÍnsertCoinAndEjectCoin();
+            
+            while (_gumballMachine.NumberOfGumballs > 0) 
+            {
+                CountGumballsAndÍnsertCoinAndTurnCrank();
+            }
+            
+            CountGumballsAndÍnsertCoinAndTurnCrank();
+            CountGumballsAndÍnsertCoinAndTurnCrank();
+            CountGumballsAndÍnsertCoinAndTurnCrank();
+        }
 
-            gumballMachine.InsertCoin();
-            gumballMachine.TurnCrank();
+        private static void CountGumballsAndÍnsertCoinAndTurnCrank() {
 
-            gumballMachine.InsertCoin();
-            gumballMachine.TurnCrank();
+            Console.WriteLine();
+            _gumballMachine.CountGumballs();
+            _gumballMachine.InsertCoin();
+            _gumballMachine.TurnCrank();
+        }
 
-            // should not work since there are not enough gumballs
-            gumballMachine.InsertCoin();
-            gumballMachine.TurnCrank();
+        private static void CountGumballsAndÍnsertCoinAndEjectCoin() {
 
-            // should not even accept coin since state is SoldOut
-            gumballMachine.InsertCoin();
-            gumballMachine.TurnCrank();
+            Console.WriteLine();
+            _gumballMachine.CountGumballs();
+            _gumballMachine.InsertCoin();
+            _gumballMachine.EjectCoin();
         }
     }
 }
