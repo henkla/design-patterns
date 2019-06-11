@@ -18,7 +18,16 @@ namespace StatePatternExample
             
             CountGumballsAndInsertCoinAndTurnCrank();
             CountGumballsAndInsertCoinAndTurnCrank();
-            CountGumballsAndInsertCoinAndTurnCrank();
+
+            TiltMachineAndTryToOperate();
+        }
+
+        private static void TiltMachineAndTryToOperate()
+        {
+            Console.WriteLine();
+            _gumballMachine.TiltMachine();
+            _gumballMachine.InsertCoin();
+            _gumballMachine.TurnCrank();
         }
 
         private static void CountGumballsAndInsertCoinAndTurnCrank() {

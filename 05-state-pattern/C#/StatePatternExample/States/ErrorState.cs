@@ -15,10 +15,6 @@ namespace StatePatternExample.States
             _name = this.GetType().Name;
         }
 
-        public override void Dispense() => Console.WriteLine($"[{_name}] Machine is unable to dispense gumballs when in error state.");
-
-        public override void EjectCoin() => Console.WriteLine($"[{_name}] Machine is unable to hold coins when in error state.");
-
         public override void InsertCoin() => Console.WriteLine($"[{_name}] Machine won't accept coins when in error state.");
     }
 }

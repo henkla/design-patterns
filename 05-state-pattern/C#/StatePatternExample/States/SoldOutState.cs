@@ -10,6 +10,7 @@ namespace StatePatternExample.States
         public SoldOutState(GumballMachine gumballMachine, StateFactory stateFactory) : base(gumballMachine, stateFactory)
         {
             _name = this.GetType().Name;
+            Console.WriteLine($"[{_name}] Manager informed that machine is out of gumballs.");
         }
 
         public override void InsertCoin() 

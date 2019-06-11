@@ -27,11 +27,12 @@ namespace StatePatternExample.Factories
             return _noCoinState;
         }
 
-        internal void SetNextState(IGumballMachineState nextState)
+        internal IGumballMachineState SetNextState(IGumballMachineState nextState)
         {
             _nextState = nextState;
+            return _nextState;
         }
-        
+
         internal IGumballMachineState GetNextState()
         {
             return _nextState == null

@@ -27,6 +27,19 @@ namespace StatePatternExample
                 : NumberOfGumballs - numberToConsume;
         }
 
+        public void TiltMachine()
+        {
+            Console.WriteLine($"[{_name}] TILT MACHINE");
+            
+            try 
+            {
+                throw new InvalidOperationException();
+            }
+            catch (Exception e)
+            {
+                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+            }
+        }
         public void InsertCoin() 
         {
             Console.WriteLine($"[{_name}] INSERT COIN");
@@ -38,7 +51,7 @@ namespace StatePatternExample
             }   
             catch(Exception e) 
             {
-                _currentState = _stateFactory.GetErrorState(e);
+                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             } 
         }
 
@@ -53,7 +66,7 @@ namespace StatePatternExample
             }
             catch(Exception e) 
             {
-                _currentState = _stateFactory.GetErrorState(e);
+                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             } 
         }
 
@@ -73,7 +86,7 @@ namespace StatePatternExample
             }
             catch(Exception e) 
             {
-                _currentState = _stateFactory.GetErrorState(e);
+                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             } 
         }
 
@@ -98,7 +111,7 @@ namespace StatePatternExample
             }
             catch (Exception e)
             {
-                _currentState = _stateFactory.GetErrorState(e);
+                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
             }
         }
     }
