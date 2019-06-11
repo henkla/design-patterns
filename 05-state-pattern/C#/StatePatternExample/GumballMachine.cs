@@ -19,9 +19,22 @@ namespace StatePatternExample
             AddGumballs(numberOfGumballs);
         }
 
+        public void ResetMachine() 
+        {
+            Console.WriteLine($"[{_name}] RESET MACHINE");
+
+            try
+            {
+                _currentState = _stateFactory.GetStartingState();
+            }
+            catch (Exception e)
+            {
+                _currentState = _stateFactory.SetNextState(_stateFactory.GetErrorState(e));
+            }
+        }
+
         private void ConsumeGumball(int numberToConsume = 1)
         {
-
             NumberOfGumballs = NumberOfGumballs == 0
                 ? NumberOfGumballs
                 : NumberOfGumballs - numberToConsume;

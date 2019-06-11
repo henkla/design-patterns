@@ -58,17 +58,13 @@ namespace StatePatternExample.Factories
 
         public IGumballMachineState GetSoldOutState() 
         {
-            if (_soldOutState == null)
-                _soldOutState = new SoldOutState(_gumballMachine, this);
-
+            _soldOutState = new SoldOutState(_gumballMachine, this);
             return _soldOutState;
         }
 
         public IGumballMachineState GetErrorState(Exception e = null) 
         {
-            if (_errorState == null)
-                _errorState = new ErrorState(_gumballMachine, this, e);
-
+            _errorState = new ErrorState(_gumballMachine, this, e);
             return _errorState;
         }
 

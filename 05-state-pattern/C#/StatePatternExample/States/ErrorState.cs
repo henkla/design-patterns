@@ -13,6 +13,7 @@ namespace StatePatternExample.States
         {
             _exception = exception;
             _name = this.GetType().Name;
+            Console.WriteLine($"[{_name}] Manager informed that machine is in error state.");
         }
 
         public override void InsertCoin() => Console.WriteLine($"[{_name}] Machine won't accept coins when in error state.");
